@@ -1,0 +1,90 @@
+@import "../../vendors/bootstrap/bootstrap";
+@import "mixins";
+@import "variables";
+
+#main {
+	position: relative;
+	padding-top: 100px;
+	.row {
+		.row1, .row2, .row3, .row4, .row5, .row6 {
+			margin-bottom: 30px;
+		}
+		.text {
+			background: $textBg;
+			padding: 20px 30px;
+			width: 260px;
+			color: $textColor;
+			h4 {
+				font-weight: bold;
+			}
+		}
+	}
+	.panel {
+		cursor: pointer;
+		cursor: hand;
+	}
+	.panel:hover {
+		opacity: 0.8;
+	}
+}
+
+.slider {
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	.top {
+		.close {
+			float: right;
+			opacity: 1;
+			h1 {
+				font-size: 30px;
+				font-weight: bold;
+				margin-right: 50px;
+			}
+		}
+	}
+	.btnLeft {
+		font-size: 40px;
+		position: absolute;
+		top: 500px;
+		left: 50px;
+		z-index: 2;
+		#btnLeft {
+			background: none;
+			border: none;
+		}
+	}
+	.slides {
+		.sliderPanel {
+			width: 660px;
+			height: 560px;
+			background: white;
+			padding: 60px 50px;
+			color: $textColor;
+			position: absolute;
+			visibility: hidden;
+			img {
+				position: relative;
+			}	
+		}
+	}
+	.btnRight {
+		font-size: 40px;
+		position: absolute;
+		top: 500px;
+		right: 100px;
+		z-index: 2;
+		#btnRight {
+			background: none;
+			border: none;
+		}
+	}
+}
+
+.hide {
+	visibility: hidden;
+}
+
