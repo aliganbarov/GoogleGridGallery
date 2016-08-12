@@ -3,8 +3,12 @@ for (var i = 0; i < $('.sliderPanel').length; i++) {
 	bigPanels[i] = $('#bpanel' + (i + 1));
 }
 
+
 $(document).ready(function() {
 	$('.panel').on('click', function() {
+		//disable scrolling
+		document.body.style.overflow = 'hidden'
+		
 		//making slider div visible and place on window
 		$('.slider').removeClass('hide').css("top", $(window).scrollTop())
 		.css("height", $(window).height())
@@ -62,6 +66,9 @@ $(document).ready(function() {
 				visibility: 'hidden'
 			})
 		}
+
+		//enable scrolling
+		document.body.style.overflow = 'visible'
 	})//end of close button on click function
 
 })//end document ready function
@@ -112,20 +119,12 @@ function PlacePanels() {
 		fontSize: '1em',
 		visibility: 'visible',
 	})
+	.hide()
+	.fadeIn(300)
 	.find('img').css({
 		width: 'auto',
 		left: '0px'
 	})
-
-	// .hide()
-	// .fadeIn(100)
-	// .animate({
-	// 	top: '200px',
-	// 	left: '600px',
-	// 	width: '680px',
-	// 	height: '560px',
-	// 	padding: '60px 50px'
-	// },200)
 
 	//setting previous panel
 	prevPanel
@@ -136,6 +135,8 @@ function PlacePanels() {
 		left: '-500px',
 		visibility: 'visible'
 	})
+	.hide()
+	.fadeIn(300)
 	.find('img').css({
 		width: '450px',
 		left: '100px'
@@ -150,6 +151,8 @@ function PlacePanels() {
 		left: ($(window).width() - 160) + 'px',
 		visibility: 'visible'
 	})
+	.hide()
+	.fadeIn(300)
 	.find('img').css({
 		width: '450px'
 	})
